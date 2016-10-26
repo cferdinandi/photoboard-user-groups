@@ -7,6 +7,10 @@
 	 */
 	function photoboard_user_groups_add_fields( $user ) {
 
+		// Only let admins control this
+		if ( !current_user_can( 'edit_themes' ) ) return;
+
+		// Get data
 		$user_groups = get_terms( 'photoboard_user_groups', array( 'hide_empty' => false) );
 		$the_group = get_the_author_meta( 'photoboard_user_group', $user->ID );
 
