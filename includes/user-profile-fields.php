@@ -64,7 +64,7 @@
 
 		// Update user group
 		if ( !isset( $_POST['photoboard_user_group'] ) ) return;
-		update_usermeta( $user_id, 'photoboard_user_group', $_POST['photoboard_user_group'] );
+		update_user_meta( $user_id, 'photoboard_user_group', $_POST['photoboard_user_group'] );
 
 	}
 	add_action( 'personal_options_update', 'photoboard_user_groups_save_fields' );
