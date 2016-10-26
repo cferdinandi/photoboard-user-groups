@@ -7,7 +7,7 @@
 
 		// Add new taxonomy, NOT hierarchical (like tags)
 		$labels = array(
-			'name'                       => _x( 'User Groups', 'taxonomy general name', 'photoboard_user_groups' ),
+			'name'                       => _x( 'Restrict Access', 'taxonomy general name', 'photoboard_user_groups' ),
 			'singular_name'              => _x( 'User Group', 'taxonomy singular name', 'photoboard_user_groups' ),
 			'search_items'               => __( 'Search Groups', 'photoboard_user_groups' ),
 			'popular_items'              => __( 'Popular Groups', 'photoboard_user_groups' ),
