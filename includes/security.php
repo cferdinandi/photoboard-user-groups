@@ -97,7 +97,7 @@
 
 		// Get groups and visibility settings
 		$access = get_post_meta( $post->ID, 'photoboard_media_user_groups', true );
-		$groups = get_terms( 'photoboard_user_groups' );
+		$groups = get_terms( 'photoboard_user_groups', array( 'hide_empty' => false) );
 		$html = '';
 
 		// Create a checkbox for each group
@@ -134,7 +134,7 @@
 
 		// Get groups and visibility settings
 		$access = Array();
-		$groups = get_terms( 'photoboard_user_groups' );
+		$groups = get_terms( 'photoboard_user_groups', array( 'hide_empty' => false) );
 
 		// For each checkbox, set visibility
 		foreach ($groups as $group) {
