@@ -12,7 +12,7 @@
 
 		// Get data
 		$user_groups = get_terms( 'photoboard_user_groups', array( 'hide_empty' => false) );
-		$the_group = get_the_author_meta( 'photoboard_user_group', $user->ID );
+		$the_group = empty($user) || !is_object( $user ) ? null : get_the_author_meta( 'photoboard_user_group', $user->ID );
 
 		?>
 
@@ -50,6 +50,7 @@
 	}
 	add_action( 'show_user_profile', 'photoboard_user_groups_add_fields' );
 	add_action( 'edit_user_profile', 'photoboard_user_groups_add_fields' );
+	add_action( 'user_new_form', 'photoboard_user_groups_add_fields' );
 
 
 
@@ -69,3 +70,4 @@
 	}
 	add_action( 'personal_options_update', 'photoboard_user_groups_save_fields' );
 	add_action( 'edit_user_profile_update', 'photoboard_user_groups_save_fields' );
+	add_action( 'user_register', 'photoboard_user_groups_save_fields' );
